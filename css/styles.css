@@ -1,0 +1,18 @@
+.navActive{
+	border-bottom: 4px solid white;
+}
+#nav-pills{
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	padding: 0% auto
+}
+#nav-pills .row{
+	background-color: darkgreen;
+	padding: 1% 0%;
+	font-weight: 500;
+	padding-bottom: 0
+}
+#nav-pills a{
+	color: white;
+}
