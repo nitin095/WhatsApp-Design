@@ -1,5 +1,6 @@
-.navActive{
+.active{
 	border-bottom: 4px solid white;
+	background: transparent !important;
 }
 #nav-pills{
 	position: sticky;
@@ -15,4 +16,11 @@
 }
 #nav-pills a{
 	color: white;
+}
+/*.list-group-item{
+	background: red;
+	height: 10vh;
+}*/
+.no-left-padding{
+	padding-left: 0;
 }
