@@ -8,8 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-	<div class="container">
-		<div id="header" class="row align-items-center" style="background-color: darkgreen;color: white;padding: 2% 0%;transition:all 0.8s ease;">
+	<div id="main-screen" class="container-fluid" style="padding: 0px">
+		<div id="header" class="row align-items-center">
 			<div class="col-10 hideOnSearch"><h5>WhatsApp</h5></div>
 			<div class="col-1 hideOnSearch">
 				<i id="search-button" class="fas fa-search"></i>
@@ -36,13 +36,13 @@
 				  		</form>
 				  	</div>	
 			  	</div>
-			</div>
-		</div>
-	</div><!-- end container -->
+			</div><!-- end search input -->
+		</div><!-- end header -->
+	
 
 	<div id="nav-pills" class="container hideOnSearch">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-12 no-padding">
 				<ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
 				  <li class="nav-item">
 				    <a class="nav-link active" id="pills-chats-tab" data-toggle="pill" href="#pills-chats" role="tab" aria-controls="pills-chats" aria-selected="true">Chats</a>
@@ -62,19 +62,23 @@
 	<div class="tab-content" id="pills-tabContent">
 
 		<div id="pills-chats" class="container tab-pane fade show active" aria-labelledby="pills-chats-tab" style="padding: 0">
-			<div class="list-group">
-			  
+			<div class="list-group chats-list"> 
 			</div>
-		</div>
+		</div><!-- end pills-chat -->
 	
 		<div class="tab-pane fade" id="pills-status" role="tabpanel" aria-labelledby="pills-status-tab">
-			This is status section
+			<div class="list-group status-list"> 
+			</div>
 		</div>
 
 		<div class="tab-pane fade" id="pills-calls" role="tabpanel" aria-labelledby="pills-calls-tab">
-			This is calls section
+			<div class="row align-items-center" style="height: 80vh">
+				<div class="col-12">
+					<span>No recent calls.</span> 
+				</div>
+			</div>
 		</div>
-	</div>
+	</div><!-- end tab-content -->
 
 	<div class="container">
 		<div class="row justify-content-end">
@@ -83,7 +87,109 @@
 			</div>
 		</div>
 	</div>
+	</div><!-- end container -->
 
+
+	<div id="user-chat" class="container">
+					<div class="row align-items-center chatHeader">
+						<div class="col-1"><a href="index.html"><i class="fas fa-arrow-left"></i></a></div>
+						<div class="col-1" style="padding: 0"><img id="userPic" class="img-fluid rounded-circle"></div>
+						<div class="col-8">
+							<div class="row" style="line-height: 90%">
+								<div class="col-12"><span id="userName"></span></div>
+								<div class="col-12"><small id="online">Online</small></div>
+							</div>
+						</div>
+						<div class="col-1">
+							<i id="call-button" class="fas fa-phone"></i>
+						</div>
+						<div class="col-1">
+							<div class="dropleft">
+							  <button id="userChatMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background:transparent;border: 0;color: white">
+							    <i class="fas fa-ellipsis-v"></i>
+							  </button>
+							  <div class="dropdown-menu" aria-labelledby="userChatMenuButton">
+							    <a class="dropdown-item" href="#">View Contact</a>
+							    <a class="dropdown-item" href="#">Media</a>
+							    <a class="dropdown-item" href="#">Search</a>
+							    <a class="dropdown-item" href="#">Wallpaper</a>
+							  </div>
+							</div>
+						</div><!-- end col -->
+					<div id="search-input" class="col-12" style="display: none;transition:all 0.5s ease;">
+						<div class="row align-items-center">
+							<div id="search-back-button" class="col-1"><i class="fas fa-arrow-left" style="color: darkgreen;"></i></div>
+							<div class="col-11">
+								<form class="form-inline">
+							    	<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="border: 0;height: 10vw;">
+						  		</form>
+						  	</div>	
+					  	</div>
+					  	
+					</div><!-- end search input -->
+					</div><!-- end row -->		
+
+
+	<div id="user-chat-container" class="container no-padding">
+		<div class="row sentMessage"><div class="col-auto">Hi!</div></div>
+		<div class="row sentMessage"><div class="col-auto">How are you?</div></div>
+		<div class="row receivedMessage"><div class="col-auto">I'm fine. What about you?</div></div>
+		<div class="row sentMessage"><div class="col-auto">I'm good. I'm going for movie tommorow afternoon, you wanna join?</div></div>
+		<div class="row receivedMessage"><div class="col-auto">Which movie and where?</div></div>
+		<div class="row sentMessage"><div class="col-auto">Deadpool 2 at Director's cut. 5PM show</div></div>
+		<div class="row receivedMessage"><div class="col-auto">Alright. i'll meet you there at 5.</div></div>
+		<div class="row sentMessage"><div class="col-auto">Done</div></div>
+		<div class="row receivedMessage"><div class="col-auto">Ok</div></div>
+	</div>
+
+	<div id="chatInput" class="container ">
+		<div class="row align-items-center">
+			<div class="col-10">
+				<input type="text" name="chatMessage" value="Type a message">
+			</div>
+			<div class="col-1">
+				<i class="fas fa-microphone rounded-circle"></i>
+			</div>
+		</div>
+	</div>
+
+	</div><!-- end user-chat container -->
+
+	<div id="user-status" class="container">
+		<div class="row align-items-center statusHeader" style="height: 10vh;">
+			<div class="col-1"><a href="index.html"><i class="fas fa-arrow-left"></i></a></div>
+			<div class="col-1" style="padding: 0"><img id="userPicStatus" class="img-fluid rounded-circle"></div>
+			<div class="col-9">
+				<div class="row" style="line-height: 90%">
+					<div class="col-12"><span id="userNameStatus"></span></div>
+					<div class="col-12"><small id="statusDate"></small></div>
+				</div>
+			</div>
+			<div class="col-1">
+				<div class="dropleft">
+					<button id="userChatMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background:transparent;border: 0;color: white">
+						<i class="fas fa-ellipsis-v"></i>
+					</button>
+					<div class="dropdown-menu" aria-labelledby="userChatMenuButton">
+						<a class="dropdown-item" href="#">Mute</a>
+					</div>
+				</div>
+			</div><!-- end col -->		
+		</div><!-- end row -->
+
+		<div class="container-fluid no-padding" style="height: 90vh;">
+			<div class="row align-items-center" style="height: 100%">
+				<div class="col-12 no-padding">
+					<img id="userStatus" style="width: 100%">
+				</div>
+			</div>
+			<div class="row">
+				<div id="statusMessage" class="col-12">
+				</div>
+			</div>
+		</div>
+
+	</div><!-- end user status container -->
 
 
 
@@ -91,72 +197,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script type="text/javascript" src="script/data.js"></script>
-<script type="text/javascript">
-	$(document).ready(function(){
-    $("#search-button").click(function(){
-    	console.log("entered function")
-    	$(".hideOnSearch").css("display", "none");
-    	$("#header").css("background", "white");
-    	$("#search-input").css("display", "block");
-    });
-    $("#search-back-button").click(function(){
-    	$(".hideOnSearch").css("display", "block");
-    	$("#header").css("background", "darkgreen");
-    	$("#search-input").css("display", "none	");
-    });
-});
-
-	let chatsContainer = document.querySelector(".list-group");
-
-	let listNode = document.createElement("a");
-	listNode.className = "list-group-item list-group-item-action flex-column align-items-start";
-	
-	let rowDiv = document.createElement("div");
-	rowDiv.className = "row";
-	listNode.appendChild(rowDiv);
-
-	let	col2Div = document.createElement("div");
-	col2Div.className = "col-2 align-self-center";
-	rowDiv.appendChild(col2Div);
-
-	let image = document.createElement("img");
-	image.className = "img-fluid rounded-circle";
-	col2Div.appendChild(image);
-
-	let col10Div = document.createElement("div");
-	col10Div.className = "col-10 no-left-padding";
-	rowDiv.appendChild(col10Div);
-
-	let flexDiv = document.createElement('div');
-	flexDiv.className = "d-flex w-100 justify-content-between";
-	col10Div.appendChild(flexDiv);
-
-	let personName = document.createElement("h5");
-	personName.className = "mb-1";
-	flexDiv.appendChild(personName);
-
-	let lastMessageDate = document.createElement("small");
-	flexDiv.appendChild(lastMessageDate);
-
-	let lastMessage = document.createElement("p");
-	lastMessage.className = "mb-1";
-	col10Div.appendChild(lastMessage);
-
-	let loadChat = (userName) => {
-		console.log(userName);
-	};
-
-
-	for (let user of users){
-		console.log("looping")
-		personName.innerHTML = user.name;
-		lastMessageDate.innerHTML = user.lastMessageDate;
-		lastMessage.innerHTML = "last message";
-		image.src = user.pictureUrl;
-		chatsContainer.appendChild(listNode.cloneNode(true));
-	}
-	
-</script>
+<script type="text/javascript" src="script/script.js"></script>
 
 </body>
 </html>
