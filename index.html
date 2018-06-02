@@ -8,31 +8,44 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-	<div id="main-screen" class="container-fluid" style="padding: 0px">
-		<div id="header" class="row align-items-center">
-			<div class="col-10 hideOnSearch"><h5>WhatsApp</h5></div>
-			<div class="col-1 hideOnSearch">
-				<i id="search-button" class="fas fa-search"></i>
+	<div class="container-fluid no-padding" style="height: 100vh;overflow-y: hidden;">
+	<div class="row no-gutters">
+			<div class="col-lg-4">
+	<div id="main-screen" class="container-fluid no-padding"> 			
+		<div id="header" class="row align-items-center no-gutters" style="height: 10vh">
+			<div class="col hideOnSearch">
+				<h5 class="d-lg-none">WhatsApp</h5>
+				<img id="user-picture" src="images/users/user.jpg" class="img-fluid rounded-circle d-none d-lg-block" style="width: 20%">
 			</div>
-			<div class="col-1 hideOnSearch">
-				<div class="dropleft">
-				  <button id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background:transparent;border: 0;color: white">
-				    <i class="fas fa-ellipsis-v"></i>
-				  </button>
-				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-				    <a class="dropdown-item" href="#">New group</a>
-				    <a class="dropdown-item" href="#">WhatsApp web</a>
-				    <a class="dropdown-item" href="#">Starred messages</a>
-				    <a class="dropdown-item" href="#">Settings</a>
-				  </div>
+			<div class="col">
+				<div class="row justify-content-end">
+					<div class="col-auto hideOnSearch d-none d-lg-block">
+						<i id="status-button" class="fas fa-circle-notch" data-toggle="tooltip" data-placement="bottom" title="Status" data-delay="200"></i>
+					</div>
+					<div class="col-auto hideOnSearch">
+						<i id="search-button" class="fas fa-search" data-toggle="tooltip" data-placement="bottom" title="Search" data-delay="200"></i>
+					</div>
+					<div class="col-auto hideOnSearch">
+						<div class="dropleft">
+						  <button id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    <i class="fas fa-ellipsis-v" data-toggle="tooltip" data-placement="bottom" title="Menu" data-delay="200"></i>
+						  </button>
+						  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						    <a class="dropdown-item" id="menu-profile" href="#">Profile</a>
+						    <a class="dropdown-item" href="#">WhatsApp web</a>
+						    <a class="dropdown-item" href="#">Starred messages</a>
+						    <a class="dropdown-item" href="#">Settings</a>
+						  </div>
+						</div>
+					</div><!-- end col -->
 				</div>
-			</div><!-- end col -->
+			</div>
 			<div id="search-input" class="col-12" style="display: none;transition:all 0.5s ease;">
 				<div class="row align-items-center">
 					<div id="search-back-button" class="col-1"><i class="fas fa-arrow-left" style="color: darkgreen;"></i></div>
 					<div class="col-11">
 						<form class="form-inline">
-					    	<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="border: 0;height: 10vw;">
+					    	<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="border: 0;">
 				  		</form>
 				  	</div>	
 			  	</div>
@@ -40,7 +53,7 @@
 		</div><!-- end header -->
 	
 
-	<div id="nav-pills" class="container hideOnSearch">
+	<div id="nav-pills" class="d-lg-none sticky-top hideOnSearch">
 		<div class="row">
 			<div class="col-12 no-padding">
 				<ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
@@ -61,7 +74,7 @@
 
 	<div class="tab-content" id="pills-tabContent">
 
-		<div id="pills-chats" class="container tab-pane fade show active" aria-labelledby="pills-chats-tab" style="padding: 0">
+		<div id="pills-chats" class="tab-pane fade show active" aria-labelledby="pills-chats-tab">
 			<div class="list-group chats-list"> 
 			</div>
 		</div><!-- end pills-chat -->
@@ -76,11 +89,11 @@
 				<div class="col-12">
 					<span>No recent calls.</span> 
 				</div>
-			</div>
+			</div>	
 		</div>
 	</div><!-- end tab-content -->
 
-	<div class="container">
+	<div class="container d-lg-none">
 		<div class="row justify-content-end">
 			<div class="col-2">
 				<i class="fas fa-comment-alt rounded-circle" style="background-color: lightgreen;padding:4%;font-size: 1.5rem;color: white;position: fixed;bottom: 2vw;right: 2vw;"></i>
@@ -89,23 +102,77 @@
 	</div>
 	</div><!-- end container -->
 
+	<div id="user-profile" class="container-fluid no-padding">
+		<div class="row align-items-end justify-content-center pb-4 py-2" style="height: 18vh;background: rgb(0,191,165);color: white;">
+			<div class="col-3"><i id="profile-back" class="fas fa-arrow-left pl-2"></i></div>
+			<div class="col-9 font-weight-bold pl-0" style="transform: scale(1.2);">Profile</div>
+		</div>
+		<div class="container-fluid no-padding" style="overflow-y: scroll;overflow-x: hidden; height: 82vh">
+		<div class="row justify-content-center">
+			<div class="col-12 text-center py-4">
+				<img src="images/users/user.jpg" class="img-fluid rounded-circle" style="width: 50%;">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="row py-2 px-3" style="background: white">
+					<div class="col-12" style="color: rgb(0,191,165)"><small>Your Name</small></div>
+					<div class="col-11 py-3">Nitin Shokeen</div>
+					<div class="col-1 py-3"><i class="fas fa-pencil-alt"></i></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<p class="px-3 py-3" style="color: rgba(0,0,0,0.5);font-size: 0.9rem">This is not your username or pin. This name will be visible to your WhatsApp contacts.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="row py-2 px-3" style="background: white">
+					<div class="col-12" style="color: rgb(0,191,165)"><small>About</small></div>
+					<div class="col-11 py-3">Busy</div>
+					<div class="col-1 py-3"><i class="fas fa-pencil-alt"></i></div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
 
-	<div id="user-chat" class="container">
-					<div class="row align-items-center chatHeader">
-						<div class="col-1"><a href="index.html"><i class="fas fa-arrow-left"></i></a></div>
-						<div class="col-1" style="padding: 0"><img id="userPic" class="img-fluid rounded-circle"></div>
-						<div class="col-8">
+</div><!-- end main col-4 -->
+<div class="col-lg-8" id="chat">
+	<div id="web-screen" class="d-flex align-items-center" style="background: rgb(247,249,250);height: 100vh;">
+		<div class="container-fluid">
+			<div class="row"> 
+				<div class="col-12 text-center">
+					<i class="fab fa-whatsapp logo" style="font-size: 8rem;font-weight: 550"></i>
+				</div>
+				<div class="col-12 text-center">
+					<p class="lead" style="font-size: 1.8rem;">Keep your phone connected.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="user-chat" class="container-fluid">
+					<div class="row align-items-center chatHeader" style="height: 10vh">
+						<div class="col-1 d-lg-none"><a href="index.html"><i class="fas fa-arrow-left"></i></a></div>
+						<div class="col-2 col-lg-1 center pl-0">
+							<!-- <img id="userPic" class="img-fluid rounded-circle" style="width: auto;"> -->
+							<img id="userPic" class="img-fluid rounded-circle" style="width: 70%">
+						</div>
+						<div class="col-7 col-lg-9 pl-0">
 							<div class="row" style="line-height: 90%">
-								<div class="col-12"><span id="userName"></span></div>
-								<div class="col-12"><small id="online">Online</small></div>
+								<div class="col-12 pl-0"><span id="userName"></span></div>
+								<div class="col-12 pl-0"><small id="online">Online</small></div>
 							</div>
 						</div>
-						<div class="col-1">
+						<div class="col-1 col-lg-1">
 							<i id="call-button" class="fas fa-phone"></i>
 						</div>
-						<div class="col-1">
+						<div class="col-1 col-lg-1">
 							<div class="dropleft">
-							  <button id="userChatMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background:transparent;border: 0;color: white">
+							  <button id="userChatMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							    <i class="fas fa-ellipsis-v"></i>
 							  </button>
 							  <div class="dropdown-menu" aria-labelledby="userChatMenuButton">
@@ -130,20 +197,20 @@
 					</div><!-- end row -->		
 
 
-	<div id="user-chat-container" class="container no-padding">
-		<div class="row sentMessage"><div class="col-auto">Hi!</div></div>
-		<div class="row sentMessage"><div class="col-auto">How are you?</div></div>
-		<div class="row receivedMessage"><div class="col-auto">I'm fine. What about you?</div></div>
-		<div class="row sentMessage"><div class="col-auto">I'm good. I'm going for movie tommorow afternoon, you wanna join?</div></div>
-		<div class="row receivedMessage"><div class="col-auto">Which movie and where?</div></div>
-		<div class="row sentMessage"><div class="col-auto">Deadpool 2 at Director's cut. 5PM show</div></div>
-		<div class="row receivedMessage"><div class="col-auto">Alright. i'll meet you there at 5.</div></div>
-		<div class="row sentMessage"><div class="col-auto">Done</div></div>
-		<div class="row receivedMessage"><div class="col-auto">Ok</div></div>
-	</div>
+	<div id="user-chat-container" class="container-fluid no-padding" style="height: 80vh">
+		<div class="row sentMessage"><div class="col-auto rounded-left">Hi!</div></div>
+		<div class="row sentMessage"><div class="col-auto rounded-left">How are you?</div></div>
+		<div class="row receivedMessage"><div class="col-auto rounded-right">I'm fine. What about you?</div></div>
+		<div class="row sentMessage"><div class="col-auto rounded-left">I'm good. I'm going for movie tommorow afternoon, you wanna join?</div></div>
+		<div class="row receivedMessage"><div class="col-auto rounded-right">Which movie and where?</div></div>
+		<div class="row sentMessage"><div class="col-auto rounded-left">Deadpool 2 at Director's cut. 5PM show</div></div>
+		<div class="row receivedMessage"><div class="col-auto rounded-right">Alright. i'll meet you there at 5.</div></div>
+		<div class="row sentMessage"><div class="col-auto rounded-left">Done</div></div>
+		<div class="row receivedMessage"><div class="col-auto rounded-right">Ok</div></div>
+	</div><!-- end user-chat container -->
 
-	<div id="chatInput" class="container ">
-		<div class="row align-items-center">
+		<div id="chatInput" class="container">
+		<div class="row">
 			<div class="col-10">
 				<input type="text" name="chatMessage" value="Type a message">
 			</div>
@@ -151,15 +218,15 @@
 				<i class="fas fa-microphone rounded-circle"></i>
 			</div>
 		</div>
-	</div>
+		</div>
 
-	</div><!-- end user-chat container -->
+	</div><!-- end user-chat -->
 
 	<div id="user-status" class="container">
 		<div class="row align-items-center statusHeader" style="height: 10vh;">
-			<div class="col-1"><a href="index.html"><i class="fas fa-arrow-left"></i></a></div>
-			<div class="col-1" style="padding: 0"><img id="userPicStatus" class="img-fluid rounded-circle"></div>
-			<div class="col-9">
+			<div class="col-1 d-lg-none"><a href="index.html"><i class="fas fa-arrow-left"></i></a></div>
+			<div class="col-1"><img id="userPicStatus" class="img-fluid rounded-circle"></div>
+			<div class="col-9 col-lg-10">
 				<div class="row" style="line-height: 90%">
 					<div class="col-12"><span id="userNameStatus"></span></div>
 					<div class="col-12"><small id="statusDate"></small></div>
@@ -179,8 +246,8 @@
 
 		<div class="container-fluid no-padding" style="height: 90vh;">
 			<div class="row align-items-center" style="height: 100%">
-				<div class="col-12 no-padding">
-					<img id="userStatus" style="width: 100%">
+				<div class="col-12 no-padding text-center">
+					<img id="userStatus" class="img-fluid" style="min-width: 50%">
 				</div>
 			</div>
 			<div class="row">
@@ -191,7 +258,9 @@
 
 	</div><!-- end user status container -->
 
-
+</div><!-- end main col-8 -->
+</div><!-- end main row -->
+</div><!-- end main container -->
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
