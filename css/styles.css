@@ -1,30 +1,61 @@
-.tooltip-inner {
+
+/*tooltips*/
+.tooltip-inner {	
 	background: white;
-	color: black;
+	color: black;	
 	font-size: 1rem;
 	padding: 0px 5px;
 	border: 0.2px solid black;
 	border-radius: 0px;
 	-webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 }
 .arrow{
 	display: none !important;
 	}
-.active{
-	border-bottom: 4px solid white;
-	background: transparent !important;
+/*end tooltips*/
+
+/*header*/
+#header{
+	height: 10vh;
+	background-color: darkgreen;
+	color: white;
+	padding: 0% 5%;
+	/*transition:all 0.8s ease;*/
 }
-.logo{
-	background: linear-gradient(349deg, #e32717, #3b9bb2, #7962cb, #36c166);
-    background-size: 800% 800%;
-    -webkit-animation: GradientAnimation 20s ease infinite;
-    -moz-animation: GradientAnimation 20s ease infinite;
-    animation: GradientAnimation 20s ease infinite;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+#header i{
+	cursor: pointer;
 }
+#header img{
+	width: 20%;
+}
+#header #status-back-button {
+	color: lightseagreen;
+}
+#search-input{
+	display: none;
+	/*transition:all 0.5s ease;*/ 
+	background: snow;
+}
+#search-input input{
+	width: 100%;
+	border: 0.5px solid lightgrey;
+}
+#search-input i {
+	color: lightgrey;
+}
+#search-back-button{
+	color: darkgreen;
+}
+#dropdownMenuButton{
+	background:transparent;
+	border: 0;
+	color: inherit;
+}
+/*end header*/
+
+/*navigation-tab*/
 #nav-pills{
 	z-index: 1;
 	padding: 0% auto
@@ -38,6 +69,239 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 #nav-pills a{
 	color: white;
 }
+#pills-tab .active{
+	border-bottom: 4px solid white;
+	background: transparent !important;
+}
+/*end navigation-tab*/
+
+
+.no-padding{
+	padding: 0px;
+}
+.white-bg{
+	background: white;
+}
+.reduced-line-height{
+	line-height: 90%;
+}
+.list-group small{
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+}
+
+/*chat-list*/
+#new-chat{
+	background-color: lightgreen;
+	padding:4%;
+	font-size: 1.5rem;
+	color: white;
+	position: fixed;
+	bottom: 2vw;
+	right: 2vw;
+}
+.lastMessage{
+	font-weight: lighter;
+}
+.unreadMessage{
+	font-weight: bold;
+}
+.unreadMessagesCount{
+	background-color: #09d261;
+    border-radius: 12px;
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+  	color: #fff;
+  	display: inline-block;
+  	font-size: 12px;
+  	font-weight: 500;
+  	height: 19px;
+  	line-height: 20px;
+  	min-width: 9px;
+  	vertical-align: top;
+}
+#pills-chats a+.list-group-item{
+	border-top: 0.8px solid rgb(233,235,235) !important;
+}
+#pills-chats a+.list-group-item:hover{
+	background: rgb(244, 247, 247) !important;
+	border-color: transparent;
+}
+/*end chat-list*/
+
+/*status-list*/
+.status-list a{
+	background: transparent;
+}
+#pills-status a+.list-group-item:hover{
+	color: black;
+}
+/*end status-list*/
+
+
+/*calls-list*/
+#pills-calls .col-12{
+	text-align: center;
+	color: darkgrey;
+}
+/*end calls-list*/
+
+/*user-profile*/
+#user-profile{
+	background: rgb(238,238,238);
+	display: none;
+}
+#dp-change-button{
+	bottom: 10px;
+	right: 100px;
+	padding: 5%;
+	background: lightseagreen;
+	color: white;
+}
+#user-profile > div:first-child{
+	height: 18vh;
+	background: rgb(0,191,165);
+	color: white;
+}
+#user-profile > div:nth-of-type(2){
+	overflow-y: scroll;
+	overflow-x: hidden; 
+	height: 82vh;
+}
+#user-profile p{
+	color: rgba(0,0,0,0.5);
+	font-size: 0.9rem;
+}
+/*end user-profile*/
+
+/*chat-container*/
+#chat{
+	background: url(../images/chatBg.png);
+}
+.chatHeader{
+	height: 10vh;
+	background-color: darkgreen;
+	color: white;
+	/*transition:all 0.8s ease;*/
+}
+#userChatMenuButton{
+	background:transparent;
+	border: 0;
+	color: inherit;
+}
+
+#userName{
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+#userPic{
+	width: 70%;
+}
+#online{
+	
+}
+#user-chat-container{
+	height: 80vh;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+#user-chat-container .col-auto{
+	max-width: 80%;
+}
+#user-chat-container small{
+	font-size: 0.7rem;
+	color: rgb(136, 155, 122);
+}
+.sentMessage,.receivedMessage{
+	margin: 0.5rem 0rem;
+}
+.sentMessage{	
+	justify-content: flex-end;
+	word-wrap: break-word;
+}
+.sentMessage i{
+	font-size: 0.7rem;
+	color: rgb(88,198,243);
+}
+.sentMessage div{
+	background: rgb(220,248,198);
+}
+.receivedMessage div{
+	background: white;
+}
+
+#chatInput{
+	background: whitesmoke;
+	height: 10vh;
+}
+#chatInput input{
+	width: 100%;
+	height: 7vh;
+}
+#chatInput .dark-circle{
+	color: white;
+	background: darkgreen;
+	padding: 0.8rem;
+}
+#chatInput i{
+	color: grey;
+	font-size: 1.5rem;
+}
+#web-screen{
+	background: rgb(247,249,250);
+	height: 100vh;
+}
+#web-screen p.lead{
+	font-size: 1.8rem;	
+}
+/*end chat-container*/
+
+/*status-container*/
+#user-status{
+	background: black;
+}
+.statusHeader{
+	height: 10vh;
+	color: white;
+	padding: 2% 2%;
+}
+#statusMessage{
+	color: white;
+	font-weight: 500;
+	text-align: center;
+	position: absolute;
+	bottom: 10vh;
+}
+#status-screen{
+	background: rgb(0,0,0);
+	height: 100vh;
+}
+#status-screen p.lead{
+	font-size: 1.2rem;
+	color: lightgrey;
+}
+#userStatusMenuButton{
+	background:transparent;
+	border: 0;
+	color: white;
+}	
+#userStatusPic{
+	min-width: 50%;
+	max-height: 85vh;
+}
+/*end status container*/
+
+.logo{
+	font-size: 8rem;
+	background: linear-gradient(349deg, #e32717, #3b9bb2, #7962cb, #36c166);
+    background-size: 800% 800%;
+    -webkit-animation: GradientAnimation 20s ease infinite;
+    -moz-animation: GradientAnimation 20s ease infinite;
+    animation: GradientAnimation 20s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .list-group-item{
 	border-left: 0px;
 	border-right: 0px;
@@ -46,154 +310,41 @@ box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 .list-group-item:last-child{
 	border-bottom: 0px;
 }
-.no-left-padding{
-	padding-left: 0;
-}
-
-#user-chat,#user-status{
-	display: none;
-}
-#header{
-	background-color: darkgreen;
-	color: white;
-	padding: 0% 5%;
-	transition:all 0.8s ease;
-}
-#header i{
-	cursor: pointer;
-}
-#dropdownMenuButton{
-	background:transparent;
-	border: 0;
-	color: inherit;
-}
-.no-padding{
-	padding: 0px;
-}
-.list-group small{
-	text-transform: uppercase;
-	font-weight: 500;
-	letter-spacing: 0.5px;
-}
-#chat{
-	background: url(../images/chatBg.png);
-}
 #user-chat,#user-chat-container,#user-status {
 	display: none;
 }
-#user-profile{
-	background: rgb(238,238,238);
-	display: none;
-}
-#pills-chats,#pills-status{
+#pills-chats,#pills-status,#pills-calls{
     height: 90vh;
     overflow-y: auto;
     overflow-x:hidden;
 }
 
-a+.list-group-item{
-	border-top: 0.8px solid rgb(233,235,235) !important;
-}
-a+.list-group-item:hover{
-	background: rgb(244, 247, 247) !important;
-	border-color: transparent;
-}
-.chatHeader{
-	background-color: darkgreen;
-	color: white;
-	padding: 2% 0%;
-	transition:all 0.8s ease;
-}
-#userChatMenuButton{
-	background:transparent;
-	border: 0;
-	color: inherit;
-}
-.statusHeader{
-	color: white;
-	padding: 2% 2%;
-}
-#userName{
-	font-size: 1.2rem;
-	font-weight: 500;
-}
-#userPic{
-}
-#online{
-	
-}
-#user-chat-container .col-auto{
-	max-width: 80%;
-}
-.sentMessage,.receivedMessage{
-	margin: 0.8rem 0rem;
-}
-.sentMessage{	
-	justify-content: flex-end;
-}
-.sentMessage div{
-	background: lightgreen;
-}
-.receivedMessage div{
-	background: white;
-}
 
-#chatInput{
-	margin: 0.5rem 0rem;
-}
-#chatInput input{
-	width: 100%;
-	height: 5vh;
-}
-#chatInput .col-1{
-	padding: 0rem;
-}
-#chatInput i{
-	color: white;
-	background: darkgreen;
-	padding: 0.8rem;
-}
-#statusMessage{
-	color: white;
-	font-weight: 500;
-	text-align: center;
-	position: absolute;
-	bottom: 10vh;
-}	
-#pills-calls .col-12{
-	text-align: center;
-	color: darkgrey;
-}
+/* Scrollbar */
 
-
-
-
-/* width */
+/*width*/
 ::-webkit-scrollbar {
     width: 8px;
 }
 
-/* Track */
+/*Track*/
 ::-webkit-scrollbar-track {
     background: transparent; 
 }
  
-/* Handle */
+/*Handle*/
 ::-webkit-scrollbar-thumb {
     background: rgba(0,0,0,0.2);
 }
 
-/* Handle on hover */
+/*Handle on hover*/
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(0,0,0,0.3);
 }
+/* end Scrollbar */
 
 
-
-
-
-
-
+/* Animations */
 @-webkit-keyframes GradientAnimation {
     0% {
         background-position: 0% 34%
@@ -227,3 +378,4 @@ a+.list-group-item:hover{
         background-position: 0% 34%
     }
 }
+/* end Animations */

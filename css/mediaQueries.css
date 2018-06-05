@@ -1,0 +1,19 @@
+@media screen and (min-width: 769px) {
+	#header,.chatHeader{
+		background: rgb(238,238,238);
+		color: rgba(0,0,0,0.5);
+	}
+	#main-screen{
+		display: block;
+	}
+	#pills-status{
+		background: rgba(0,0,0,0.9);
+		color: silver;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#web-screen{
+		display: none;	
+	}
+}

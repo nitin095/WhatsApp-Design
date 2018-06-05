@@ -1,32 +1,3 @@
-	$(document).ready(function(){
-    $("#search-button").click(function(){
-    	console.log("entered function")
-    	$(".hideOnSearch").css("display", "none");
-    	$("#header").css("background", "white");
-    	$("#search-input").css("display", "block");
-    });
-    $("#search-back-button").click(function(){
-    	$(".hideOnSearch").css("display", "block");
-    	$("#header").css("background", "darkgreen");
-    	$("#search-input").css("display", "none	");
-    });
-       $('[data-toggle="tooltip"]').tooltip();
-      
-      $('#user-picture,#menu-profile').click(function(){
-      	$('#main-screen').css("display", "none");
-      	$('#user-profile').css("display", "block");
-      });
-       $('#profile-back').on('click', function (){
-     	$('#main-screen').css("display", "block");
-      	$('#user-profile').css("display", "none");
-     })
-     $('#status-button').on('click', function (e) {
-  		e.preventDefault();
-  		getAllStatus();
-  		$('#pills-tab a[href="#pills-status"]').tab('show')
-	});
-});
-
 	let navPills = document.querySelector("#nav-pills");
 	let chatsContainer = document.querySelector(".chats-list");
 	
@@ -35,13 +6,10 @@
 
 	let logoScreen = document.querySelector('#web-screen');
 
-	if (navPillsDisplay == "none") {
-			document.querySelector('#header').style.background = "rgb(238,238,238)";
-			document.querySelector('#header').style.color = "rgba(0,0,0,0.5)";
-		}
 	window.onresize = () => {
     	navPillsStyle = window.getComputedStyle(navPills);
     	navPillsDisplay = navPillsStyle.getPropertyValue('display');
+		
 		if (navPillsDisplay == "none") {
 			document.querySelector('#header').style.background = "rgb(238,238,238)";
 			document.querySelector('#header').style.color = "rgba(0,0,0,0.5)";
@@ -52,67 +20,71 @@
 	};
 
 	let loadChat = (id) => {
-		if (logoScreen.className !== "d-none") {
+		if (!logoScreen.classList.contains("d-none")) {
 			console.log("inside logo if")
-			logoScreen.className = "d-none";
+			logoScreen.className = "align-items-center d-none";
 		}
+
+		//setting user-list items background color
 		let userList = document.querySelectorAll('.list-group-item:not(.user-'+id+')');
 		for(let user of userList){
 			user.style.background = "initial"
 		}
+
 		//for mobile
 		if (navPillsDisplay == "block") {
 			document.querySelector('#main-screen').style.display = "none";
 			document.querySelector('#user-chat').style.display = "block";
-			//document.body.style.background = "url(images/chatBg.png)";
-		} else{
-			console.log("INSIDE WEB CONDITION")
-			document.querySelector('.chatHeader').style.background = "rgb(238,238,238)";
-			document.querySelector('.chatHeader').style.color = "rgba(0,0,0,0.5)";
 		}
+
 		document.querySelector('#user-chat').style.display = "block";
 		document.querySelector('#user-chat-container').style.display = "block";
-		document.querySelector('#user-status').style.display = "block";
+		
 		for(let user of users){
 			if (user.id == id){
 				document.querySelector("#userPic").src = user.pictureUrl;
 				document.querySelector("#userName").innerHTML = user.name;
+				if (user.unreadMessages > 0) {
+					document.querySelector('.list-group-item.user-'+id+' span').style.cssText = "font-weight: normal";
+					document.querySelector('.user-'+id+' .unreadMessagesCount').style.display = "none";
+				}
 				if (!user.online) {
 					document.querySelector("#online").style.display = "none";
+				}else{
+					document.querySelector("#online").style.display = "block";
 				}
 			}
 		}//end for loop
-	};
+	};//end loadChat
 
 	let loadStatus = (id) => {
-		//document.querySelector('#main-screen').style.display = "none";
-		if (logoScreen.className !== "d-none") {
-			console.log("inside logo if")
-			logoScreen.className = "d-none";
-		}
-		document.querySelector('#user-status').style.background = "black";
+		
+		document.querySelector('#status-screen').className = "align-items-center d-none";
+		document.querySelector('#user-status').className = "container";
 		document.querySelector('#user-status').style.display = "block";
+		
 		//for mobile
 		if (navPillsDisplay == "block") {
 			document.querySelector('#main-screen').style.display = "none";
+			document.querySelector('#web-screen').className = "d-none align-items-center";
 		} else{
-			console.log("INSIDE WEB CONDITION FOR STATUS")
 			document.querySelector('#user-chat').style.display = "none";
 			document.querySelector('#user-chat-container').style.display = "none";
 		}
+
 		for(let user of users){
 			if(user.id == id){
 				document.querySelector("#userPicStatus").src = user.pictureUrl;
 				document.querySelector("#userNameStatus").innerHTML = user.name;
 				document.querySelector("#statusDate").innerHTML = user.status.created;
-				document.querySelector('#userStatus').src = user.pictureUrl;		
+				document.querySelector('#userStatusPic').src = user.status.url;		
 				document.querySelector('#statusMessage').innerHTML = user.status.message;
 			}
 		}
 	};
 
 	for (let user of users){
-		console.log("looping")
+		console.log("looping ")
 
 	let listNode = document.createElement("a");
 	listNode.className = "list-group-item list-group-item-action flex-column align-items-start px-3";
@@ -130,7 +102,7 @@
 	col2Div.appendChild(image);
 
 	let col10Div = document.createElement("div");
-	col10Div.className = "col-10 col-lg-10 no-left-padding";
+	col10Div.className = "col-10 col-lg-10 pl-0 reduced-line-height";
 	rowDiv.appendChild(col10Div);
 
 	let flexDiv = document.createElement('div');
@@ -144,14 +116,19 @@
 	let lastMessageDate = document.createElement("small");
 	flexDiv.appendChild(lastMessageDate);
 
-	let lastMessage = document.createElement("p");
-	lastMessage.className = "mb-1";
+	let lastMessage = document.createElement("div");
+	lastMessage.className = "d-flex w-100 justify-content-between";
 	col10Div.appendChild(lastMessage);
 
 		listNode.className += " user-"+user.id;
 		personName.innerHTML = user.name;
 		lastMessageDate.innerHTML = user.lastMessageDate;
-		lastMessage.innerHTML = "last message";
+		if (user.unreadMessages > 0) {
+			//lastMessage.innerHTML = '<span class="unreadMessage">last message</span><span class="unreadMessagesCount rounded-circle">'+user.unreadMessages+"</span>";
+			lastMessage.innerHTML = '<span class="unreadMessage">last message</span><span class="badge unreadMessagesCount badge-pill">'+user.unreadMessages+'</span>';
+		}else{
+			lastMessage.innerHTML = '<span class"lastMessage">last message</span>';
+		}
 		image.src = user.pictureUrl;
 		chatsContainer.appendChild(listNode);
 		// listNode.href = "chat.html?id="+user.id;
@@ -188,8 +165,7 @@ let getAllStatus = () => {
 			col2Div.appendChild(image);
 
 			let col10Div = document.createElement("div");
-			col10Div.className = "col-10 no-left-padding";
-			col10Div.style.cssText = 'line-height: 0.8rem';
+			col10Div.className = "col-10 pl-0 reduced-line-height";
 			rowDiv.appendChild(col10Div);
 
 			let flexDiv = document.createElement('div');
