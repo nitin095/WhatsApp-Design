@@ -1,9 +1,12 @@
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 992px) {
 	#header,.chatHeader{
 		background: rgb(238,238,238);
 		color: rgba(0,0,0,0.5);
 	}
 	#main-screen{
+		display: block;
+	}
+	#web-screen{
 		display: block;
 	}
 	#pills-status{
@@ -12,8 +15,31 @@
 	}
 }
 
+@media screen and (min-width: 480px) and (max-width: 768px) {
+	#web-screen,#status-screen,#status-back-button{
+		display: none !important;	
+	}
+	#header{
+		height: auto;
+		padding: 4% 4%;	
+	}
+	#pills-chats,#pills-status,#pills-calls{
+    height:auto !important;
+	overflow-y: auto;
+	}
+}
+
 @media screen and (max-width: 480px) {
-	#web-screen{
-		display: none;	
+	#web-screen,#status-screen,#status-back-button{
+		display: none !important;	
+	}
+	#header{
+		background: 
+		height: auto;
+		padding: 4% 4%;	
+	}
+	#pills-chats,#pills-status,#pills-calls{
+    height:auto !important;
+	overflow-y: auto;
 	}
 }

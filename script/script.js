@@ -14,17 +14,13 @@
 			document.querySelector('#header').style.background = "rgb(238,238,238)";
 			document.querySelector('#header').style.color = "rgba(0,0,0,0.5)";
 		}else{
-			document.querySelector('#header').style.background = "darkgreen";
+			document.querySelector('#header').style.background = "rgb(8,104,93)";
 			document.querySelector('#header').style.color = "white";
 		}
 	};
 
 	let loadChat = (id) => {
-		if (!logoScreen.classList.contains("d-none")) {
-			console.log("inside logo if")
-			logoScreen.className = "align-items-center d-none";
-		}
-
+	
 		//setting user-list items background color
 		let userList = document.querySelectorAll('.list-group-item:not(.user-'+id+')');
 		for(let user of userList){
@@ -37,9 +33,10 @@
 			document.querySelector('#user-chat').style.display = "block";
 		}
 
+		document.querySelector('#web-screen').style.display = "none";
 		document.querySelector('#user-chat').style.display = "block";
 		document.querySelector('#user-chat-container').style.display = "block";
-		
+
 		for(let user of users){
 			if (user.id == id){
 				document.querySelector("#userPic").src = user.pictureUrl;
@@ -59,17 +56,20 @@
 
 	let loadStatus = (id) => {
 		
-		document.querySelector('#status-screen').className = "align-items-center d-none";
-		document.querySelector('#user-status').className = "container";
+		//setting active status-list-item image border color
+		document.querySelector('#user-'+id+'-status').style.border = "1.5px solid grey";
+
+		document.querySelector('#status-screen').style.display = "none";
+		//document.querySelector('#user-status').className = "container";
 		document.querySelector('#user-status').style.display = "block";
 		
 		//for mobile
 		if (navPillsDisplay == "block") {
 			document.querySelector('#main-screen').style.display = "none";
-			document.querySelector('#web-screen').className = "d-none align-items-center";
+			//document.querySelector('#web-screen').className = "d-none align-items-center";
 		} else{
-			document.querySelector('#user-chat').style.display = "none";
-			document.querySelector('#user-chat-container').style.display = "none";
+			//document.querySelector('#user-chat').style.display = "none";
+			//document.querySelector('#user-chat-container').style.display = "none";
 		}
 
 		for(let user of users){
@@ -161,7 +161,7 @@ let getAllStatus = () => {
 			rowDiv.appendChild(col2Div);
 
 			let image = document.createElement("img");
-			image.className = "img-fluid rounded-circle";
+			image.className = "img-fluid status-thumb";
 			col2Div.appendChild(image);
 
 			let col10Div = document.createElement("div");
@@ -180,9 +180,10 @@ let getAllStatus = () => {
 			time.className = "mb-1";
 			col10Div.appendChild(time);
 
+			image.id += "user-"+user.id+"-status";
 			personName.innerHTML = user.name;
 			time.innerHTML = user.status.created;
-			image.src = user.pictureUrl;
+			image.src = user.status.url;
 			statusList.appendChild(listNode);
 			listNode.addEventListener("click", function(){
 		    	loadStatus(user.id);
