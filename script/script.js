@@ -4,6 +4,7 @@ let chatsContainer = document.querySelector(".chats-list");
 let navPillsStyle = window.getComputedStyle(navPills);
 let navPillsDisplay = navPillsStyle.getPropertyValue("display");
 
+let header = document.querySelector("#header");
 let logoScreen = document.querySelector("#web-screen");
 
 window.onresize = () => {
@@ -11,11 +12,11 @@ window.onresize = () => {
   navPillsDisplay = navPillsStyle.getPropertyValue("display");
 
   if (navPillsDisplay == "none") {
-    document.querySelector("#header").style.background = "rgb(238,238,238)";
-    document.querySelector("#header").style.color = "rgba(0,0,0,0.5)";
+    header.style.background = "rgb(238,238,238)";
+    header.style.color = "rgba(0,0,0,0.5)";
   } else {
-    document.querySelector("#header").style.background = "rgb(8,104,93)";
-    document.querySelector("#header").style.color = "white";
+    header.style.background = "rgb(8,104,93)";
+    header.style.color = "white";
   }
 };
 
@@ -34,7 +35,7 @@ let loadChat = id => {
     document.querySelector("#user-chat").style.display = "block";
   }
 
-  document.querySelector("#web-screen").style.display = "none";
+  logoScreen.style.display = "none";
   document.querySelector("#user-chat").style.display = "block";
   document.querySelector("#user-chat-container").style.display = "block";
 
@@ -84,8 +85,8 @@ let loadStatus = id => {
 };
 //end loadStatus()
 
+//adding users to chats-list
 for (let user of users) {
-  console.log("looping ");
 
   let listNode = document.createElement("a");
   listNode.className ="list-group-item list-group-item-action flex-column align-items-start px-3";
@@ -136,7 +137,6 @@ for (let user of users) {
 
   image.src = user.pictureUrl;
   chatsContainer.appendChild(listNode);
-  // listNode.href = "chat.html?id="+user.id;
   listNode.addEventListener("click", function() {
     listNode.style.background = "rgb(233,235,235)";
     loadChat(user.id);
@@ -145,10 +145,12 @@ for (let user of users) {
 
 let statusTab = document.querySelector("#pills-status-tab");
 
+//to get status-list on clicking status-tab
 statusTab.addEventListener("click", function() {
   getAllStatus();
-}); //end status click event
+});
 
+//function to add status of users having status in status-list
 let getAllStatus = () => {
   let statusList = document.querySelector(".status-list");
   statusList.innerHTML = "";
@@ -197,4 +199,4 @@ let getAllStatus = () => {
     } //end if
   } //end for
 };
-//end loadAllStatus()
+//end getAllStatus()
