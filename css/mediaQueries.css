@@ -15,7 +15,7 @@
 	}
 }
 
-@media screen and (min-width: 480px) and (max-width: 768px) {
+@media screen and (min-width: 480px) and (max-width: 991px) {
 	#web-screen,#status-screen,#status-back-button{
 		display: none !important;	
 	}
@@ -27,6 +27,9 @@
     height:auto !important;
 	overflow-y: auto;
 	}
+	/*#pills-chats img{
+		transform: scale(-0.5);
+	}*/
 }
 
 @media screen and (max-width: 480px) {
@@ -34,7 +37,6 @@
 		display: none !important;	
 	}
 	#header{
-		background: 
 		height: auto;
 		padding: 4% 4%;	
 	}

@@ -1,301 +1,337 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>My Whatsapp</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<link rel="stylesheet" type="text/css" href="css/mediaQueries.css">
+  <title>My Whatsapp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="icon" type="image/png" href="images/icon.png"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/mediaQueries.css">
 </head>
+
 <body>
-	<div class="container-fluid p-0">
-	<div class="row no-gutters">
-	<div class="col-lg-4">
+  <div class="container-fluid p-0">
+    <div class="row no-gutters">
+      <div class="col-lg-4">
 
-	<div id="main-screen" class="container-fluid p-0"> 			
-		<div id="header" class="row align-items-center no-gutters">
-			<div class="col hideOnSearch">
-				<h5 class="d-lg-none">WhatsApp</h5>
-				<img id="user-picture" src="images/users/user.jpg" class="img-fluid rounded-circle d-none d-lg-block">
-				<i id="status-back-button" class="fas fa-arrow-left"></i>				
-			</div>
-			<div class="col">
-				<div class="row justify-content-end">
-					<div class="col-auto hideOnSearch d-none d-lg-block">
-						<i id="status-button" class="fas fa-circle-notch" data-toggle="tooltip" data-placement="bottom" title="Status" data-delay="200"></i>
-					</div>
-					<div class="col-auto hideOnSearch d-lg-none">
-						<i id="search-button" class="fas fa-search" data-toggle="tooltip" data-placement="bottom" title="Search" data-delay="200"></i>
-					</div>
-					<div class="col-auto hideOnSearch">
-						<div class="dropleft">
-						  <button id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						    <i class="fas fa-ellipsis-v" data-toggle="tooltip" data-placement="top" title="Menu" data-delay="200"></i>
-						  </button>
-						  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						    <a class="dropdown-item" id="menu-profile" href="#">Profile</a>
-						    <a class="dropdown-item" href="#">WhatsApp web</a>
-						    <a class="dropdown-item" href="#">Starred messages</a>
-						    <a class="dropdown-item" href="#">Settings</a>
-						  </div>
-						</div>
-					</div><!-- end col -->
-				</div>
-			</div>
-			
-		</div><!-- end header -->
+        <div id="main-screen" class="container-fluid p-0">
+          <div id="header" class="row align-items-center no-gutters">
+            <div class="col hideOnSearch">
+              <h5 class="d-lg-none">WhatsApp</h5>
+              <img id="user-picture" src="images/users/user.jpg" class="img-fluid rounded-circle d-none d-lg-block">
+              <i id="status-back-button" class="fas fa-arrow-left"></i>
+            </div>
+            <div class="col">
+              <div class="row justify-content-end">
+                <div class="col-auto hideOnSearch d-none d-lg-block">
+                  <i id="status-button" class="fas fa-circle-notch" data-toggle="tooltip" data-placement="bottom" title="Status" data-delay="200"></i>
+                </div>
+                <div class="col-auto hideOnSearch d-lg-none">
+                  <i id="search-button" class="fas fa-search" data-toggle="tooltip" data-placement="bottom" title="Search" data-delay="200"></i>
+                </div>
+                <div class="col-auto hideOnSearch">
+                  <div class="dropleft">
+                    <button id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v" data-toggle="tooltip" data-placement="top" title="Menu" data-delay="200"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" id="menu-profile" href="#">Profile</a>
+                      <a class="dropdown-item" href="#">WhatsApp web</a>
+                      <a class="dropdown-item" href="#">Starred messages</a>
+                      <a class="dropdown-item" href="#">Settings</a>
+                    </div>
+                  </div><!-- end dropleft-menu -->
+                </div><!-- end col -->
+              </div><!-- end row -->
+            </div>
 
-		<div id="search-input" class="col-12 d-lg-block">
-				<div class="row align-items-center">
-					<div id="search-back-button" class="col-1 d-lg-none"><i class="fas fa-arrow-left"></i></div>
-					<div class="col-1 d-none d-lg-block"><i class="fas fa-search"></i></div>
-					<div class="col-11 my-2">
-						<form class="form-inline">
-					    	<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-				  		</form>
-				  	</div>	
-			  	</div>
-			</div><!-- end search input -->
-	
+          </div>
+          <!-- end header -->
 
-	<div id="nav-pills" class="d-lg-none sticky-top hideOnSearch">
-		<div class="row no-gutters">
-			<div class="col-12 p-0">
-				<ul class="nav nav-pills nav-fill text-uppercase" id="pills-tab" role="tablist">
-				  <li class="nav-item">
-				    <a class="nav-link active" id="pills-chats-tab" data-toggle="pill" href="#pills-chats" role="tab" aria-controls="pills-chats" aria-selected="true">Chats <span class="rounded-circle px-1">7</span></a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" id="pills-status-tab" data-toggle="pill" href="#pills-status" role="tab" aria-controls="pills-status" aria-selected="false">Status</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" id="pills-calls-tab" data-toggle="pill" href="#pills-calls" role="tab" aria-controls="pills-calls" aria-selected="false">Calls</a>
-				  </li>
-				</ul>
-			</div>
-		</div>
-	</div>
+          <div id="search-input" class="col-12 d-lg-block">
+            <div class="row align-items-center">
+              <div id="search-back-button" class="col-1 d-lg-none"><i class="fas fa-arrow-left"></i></div>
+              <div class="col-1 d-none d-lg-block"><i class="fas fa-search"></i></div>
+              <div class="col-11 my-2">
+                <form class="form-inline">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- end search input -->
 
+          <div id="nav-pills" class="d-lg-none sticky-top hideOnSearch">
+            <div class="row no-gutters">
+              <div class="col-12 p-0">
+                <ul class="nav nav-pills nav-fill text-uppercase" id="pills-tab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="pills-chats-tab" data-toggle="pill" href="#pills-chats" role="tab" aria-controls="pills-chats" aria-selected="true">Chats <span class="rounded-circle px-1">7</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="pills-status-tab" data-toggle="pill" href="#pills-status" role="tab" aria-controls="pills-status" aria-selected="false">Status</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="pills-calls-tab" data-toggle="pill" href="#pills-calls" role="tab" aria-controls="pills-calls" aria-selected="false">Calls</a>
+                  </li>
+                </ul><!-- end nav-pills list -->
+              </div>
+            </div><!-- end row -->
+          </div>
+          <!-- end nav-pills -->
 
-	<div class="tab-content" id="pills-tabContent">
+          <div class="tab-content" id="pills-tabContent">
 
-		<div id="pills-chats" class="tab-pane fade show active" aria-labelledby="pills-chats-tab">
-			<div class="list-group chats-list"> 
-			</div>
-		</div>
-	
-		<div class="tab-pane fade" id="pills-status" role="tabpanel" aria-labelledby="pills-status-tab">
-			<div class="list-group status-list"> 
-			</div>
-		</div>
+            <div id="pills-chats" class="tab-pane fade show active" aria-labelledby="pills-chats-tab">
+              <div class="list-group chats-list">
+              </div>
+            </div>
 
-		<div class="tab-pane fade" id="pills-calls" role="tabpanel" aria-labelledby="pills-calls-tab">
-			<div class="container">
-				<div class="row align-items-center py-5">
-					<div class="col-12 text-center">
-						<span>No recent calls.</span> 
-					</div>
-				</div>
-			</div>	
-		</div>
-	</div><!-- end tab-content -->
+            <div class="tab-pane fade" id="pills-status" role="tabpanel" aria-labelledby="pills-status-tab">
+              <div class="list-group status-list">
+              </div>
+            </div>
 
-	<div class="container d-lg-none">
-		<div class="row justify-content-end">
-			<div class="col-2">
-				<i class="fas fa-comment-alt rounded-circle" id="new-chat"></i>
-			</div>
-		</div>
-	</div>
-	</div><!-- end container -->
+            <div class="tab-pane fade" id="pills-calls" role="tabpanel" aria-labelledby="pills-calls-tab">
+              <div class="container">
+                <div class="row align-items-center py-5">
+                  <div class="col-12 text-center">
+                    <span>No recent calls.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-	<div id="user-profile" class="container-fluid p-0">
-		<div class="row align-items-end justify-content-center pb-4 py-2">
-			<div class="col-3"><i id="profile-back" class="fas fa-arrow-left pl-2"></i></div>
-			<div class="col-9 font-weight-bold pl-0" style="transform: scale(1.2);">Profile</div>
-		</div>
-		<div class="container-fluid p-0">
-		<div class="row justify-content-center">
-			<div class="col-12 text-center py-4">
-				<img src="images/users/user.jpg" class="img-fluid rounded-circle" style="width: 50%;">
-				<i id="dp-change-button" class="fas fa-camera position-absolute rounded-circle"></i>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<div class="row py-2 px-3 white-bg">
-					<div class="col-12" style="color: rgb(0,191,165)"><small>Your Name</small></div>
-					<div class="col-11 py-3">Nitin Shokeen</div>
-					<div class="col-1 py-3"><i class="fas fa-pencil-alt"></i></div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<p class="px-3 py-3">This is not your username or pin. This name will be visible to your WhatsApp contacts.</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<div class="row py-2 px-3 white-bg">
-					<div class="col-12" style="color: rgb(0,191,165)"><small>About</small></div>
-					<div class="col-11 py-3">Busy</div>
-					<div class="col-1 py-3"><i class="fas fa-pencil-alt"></i></div>
-				</div>
-			</div>
-		</div>
-		</div>
-	</div><!-- end user-profile -->
+          </div>
+          <!-- end tab-content -->
 
-</div><!-- end main col-4 -->
+          <!-- new-chat floating button -->
+          <div class="container d-lg-none">
+            <div class="row justify-content-end">
+              <div class="col-2">
+                <i class="fas fa-comment-alt rounded-circle" id="new-chat"></i>
+              </div>
+            </div>
+          </div>
 
-<div class="col-lg-8" id="chat">
+        </div>
+        <!-- end main-screen container -->
 
-		<div id="web-screen" class="container-fluid">
-			<div class="row align-items-center">
-				<div class="col-12 text-center">
-					<i class="fab fa-whatsapp logo"></i>
-					<p class="lead" style="">Keep your phone connected.</p>
-				</div>
-			</div>
-		</div>
+        <!-- user-profile conatiner -->
+        <div id="user-profile" class="container-fluid p-0">
+          <div class="row align-items-end justify-content-center pb-4 py-2">
+            <div class="col-3"><i id="profile-back" class="fas fa-arrow-left pl-2"></i></div>
+            <div class="col-9 font-weight-bold pl-0" style="transform: scale(1.2);">Profile</div>
+          </div>
 
-		<div id="status-screen" class="container-fluid">
-			<div class="row align-items-center"> 
-				<div class="col-12 text-center">
-					<i class="fas fa-circle-notch logo"></i>
-					<p class="lead">Click on a contact to view their status update.</p>
-				</div>
-			</div>
-		</div>
+          <div class="container-fluid p-0">
 
+            <div class="row justify-content-center">
+              <div class="col-12 text-center py-4">
+                <img src="images/users/user.jpg" class="img-fluid rounded-circle" style="width: 50%;">
+                <i id="dp-change-button" class="fas fa-camera position-absolute rounded-circle"></i>
+              </div>
+            </div><!-- end row -->
 
-	<div id="user-chat" class="container-fluid">
-					<div class="row align-items-center chatHeader px-2 px-lg-4">
-						<div class="col-1 d-lg-none"><i id="user-chat-back-buton" class="fas fa-arrow-left"></i></div>
-						<div class="col-2 col-lg-1 center pl-0">
-							<img id="userPic" class="img-fluid rounded-circle">
-						</div>
-						<div class="col-7 col-lg-9 pl-0">
-							<div class="row reduced-line-height">
-								<div class="col-12 pl-0"><span id="userName"></span></div>
-								<div class="col-12 pl-0"><small id="online">Online</small></div>
-							</div>
-						</div>
-						<div class="col-1 col-lg-1">
-							<i id="call-button" class="fas fa-phone"></i>
-						</div>
-						<div class="col-1 col-lg-1">
-							<div class="dropleft">
-							  <button id="userChatMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							    <i class="fas fa-ellipsis-v"></i>
-							  </button>
-							  <div class="dropdown-menu" aria-labelledby="userChatMenuButton">
-							    <a class="dropdown-item" href="#">View Contact</a>
-							    <a class="dropdown-item" href="#">Media</a>
-							    <a class="dropdown-item" href="#">Search</a>
-							    <a class="dropdown-item" href="#">Wallpaper</a>
-							  </div>
-							</div>
-						</div><!-- end col -->
-					</div><!-- end row -->		
+            <div class="row">
+              <div class="col-12">
+                <div class="row py-2 px-3 white-bg">
+                  <div class="col-12" style="color: rgb(0,191,165)"><small>Your Name</small></div>
+                  <div class="col-11 py-3">Nitin Shokeen</div>
+                  <div class="col-1 py-3"><i class="fas fa-pencil-alt"></i></div>
+                </div>
+              </div>
+            </div><!-- end row -->
 
+            <div class="row">
+              <div class="col-12">
+                <p class="px-3 py-3">This is not your username or pin. This name will be visible to your WhatsApp contacts.</p>
+              </div>
+            </div><!-- end row -->
 
-	<div id="user-chat-container" class="container-fluid px-lg-5 px-0">
+            <div class="row">
+              <div class="col-12">
+                <div class="row py-2 px-3 white-bg">
+                  <div class="col-12" style="color: rgb(0,191,165)"><small>About</small></div>
+                  <div class="col-11 py-3">Busy</div>
+                  <div class="col-1 py-3"><i class="fas fa-pencil-alt"></i></div>
+                </div>
+              </div>
+            </div><!-- end row -->
 
-		<div class="row sentMessage">
-			<div class="col-auto rounded-left py-1">Hi! <small class="pl-2">01:23 PM</small><i class="fas fa-check pl-1"></i></div>
-		</div>
-		<div class="row sentMessage">
-			<div class="col-auto rounded-left py-1">How are you? <small class="pl-2">01:23 PM</small><i class="fas fa-check pl-1"></i></div>
-		</div>
-		<div class="row receivedMessage">
-			<div class="col-auto rounded-right py-1">I'm fine. What about you? <small class="pl-2">01:24 PM</small></div>
-		</div>
-		<div class="row sentMessage">
-			<div class="col-auto rounded-left py-1">I'm good. I'm going for movie tommorow afternoon, you wanna join? <small class="pl-2">01:24 PM</small><i class="fas fa-check pl-1"></i></div>
-		</div>
-		<div class="row receivedMessage">
-			<div class="col-auto rounded-right py-1">Which movie and where? <small class="pl-2">01:25 PM</small></div>
-		</div>
-		<div class="row sentMessage">
-			<div class="col-auto rounded-left py-1">Deadpool 2 at Director's cut. 5PM show <small class="pl-2">01:26 PM</small><i class="fas fa-check pl-1"></i></div>
-		</div>
-		<div class="row receivedMessage">
-			<div class="col-auto rounded-right py-1">Alright. i'll meet you there at 5. <small class="pl-2">01:28 PM</small></div>
-		</div>
-		<div class="row sentMessage">
-			<div class="col-auto rounded-left py-1">Done. <small class="pl-2">01:30 PM</small><i class="fas fa-check pl-1"></i></div>
-		</div>
-		<div class="row receivedMessage">
-			<div class="col-auto rounded-right py-1">Ok <small class="pl-2">01:31 PM</small></div>
-		</div>
-	</div><!-- end user-chat container -->
+          </div><!-- end container-fluid -->
+        </div>
+        <!-- end user-profile container-->
 
-		<div id="chatInput" class="">
-		<div class="row align-items-center">
-			<div class="col-1 text-center">
-				<i class="far fa-smile"></i>
-			</div>
-			<div class="col-10">	
-				<input type="text" name="chatMessage" placeholder="  Type a message">
-			</div>
-			<div class="col-1 text-center pl-0">
-				<i id="send-button" class="fas fa-microphone"></i>
-			</div>
-		</div>
-		</div>
+      </div>
+      <!-- end main col-4 -->
 
-	</div><!-- end user-chat -->
+      <div class="col-lg-8" id="chat">
 
-	<div id="user-status" class="container-fluid">
-		<div class="row align-items-center statusHeader">
-			<div class="col-1 d-lg-none"><i class="fas fa-arrow-left"></i></div>
-			<div class="col-1"><img id="userPicStatus" class="img-fluid rounded-circle"></div>
-			<div class="col-9 col-lg-10">
-				<div class="row reduced-line-height">
-					<div class="col-12"><span id="userNameStatus"></span></div>
-					<div class="col-12"><small id="statusDate"></small></div>
-				</div>
-			</div>
-			<div class="col-1">
-				<div class="dropleft">
-					<button id="userStatusMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<i class="fas fa-ellipsis-v"></i>
-					</button>
-					<div class="dropdown-menu" aria-labelledby="userStatusMenuButton">
-						<a class="dropdown-item" href="#">Mute</a>
-					</div>
-				</div>
-			</div><!-- end col -->		
-		</div><!-- end row -->
+        <div id="web-screen" class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-12 text-center">
+              <i class="fab fa-whatsapp logo"></i>
+              <p class="lead mt-2">Keep your phone connected.</p>
+              <p>WhatsApp connects to your phone to sync messages. To reduce data usage, connect your phone to Wi-Fi.</p>
+            </div>
+          </div>
+        </div><!-- end web-screen conatiner -->
 
-		<div class="container-fluid p-0" style="height: 90vh;">
-			<div class="row align-items-center" style="height: 100%">
-				<div class="col-12 p-0 text-center">
-					<img id="userStatusPic" class="img-fluid">
-				</div>
-			</div>
-			<div class="row">
-				<div id="statusMessage" class="col-12">
-				</div>
-			</div>
-		</div>
+        <div id="status-screen" class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-12 text-center">
+              <i class="fas fa-circle-notch logo"></i>
+              <p class="lead">Click on a contact to view their status update.</p>
+            </div>
+          </div>
+        </div><!-- end status-screen conatiner -->
 
-	</div><!-- end user status container -->
+        <!-- user-chat -->
+        <div id="user-chat" class="container-fluid">
+          
+          <!-- chat-container header -->
+          <div class="row align-items-center chatHeader px-2 px-lg-4">
+            <div class="col-1 d-lg-none"><i id="user-chat-back-buton" class="fas fa-arrow-left"></i></div>
+            <div class="col-2 col-lg-1 center pl-0">
+              <img id="userPic" class="img-fluid rounded-circle">
+            </div>
+            <div class="col-7 col-lg-9 pl-0">
+              <div class="row reduced-line-height">
+                <div class="col-12 pl-0"><span id="userName"></span></div>
+                <div class="col-12 pl-0"><small id="online">Online</small></div>
+              </div>
+            </div>
+            <div class="col-1 col-lg-1">
+              <i id="call-button" class="fas fa-phone"></i>
+            </div>
+            <div class="col-1 col-lg-1">
+              <div class="dropleft">
+                <button id="userChatMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         <i class="fas fa-ellipsis-v"></i>
+                       </button>
+                <div class="dropdown-menu" aria-labelledby="userChatMenuButton">
+                  <a class="dropdown-item" href="#">View Contact</a>
+                  <a class="dropdown-item" href="#">Media</a>
+                  <a class="dropdown-item" href="#">Search</a>
+                  <a class="dropdown-item" href="#">Wallpaper</a>
+                </div>
+              </div><!-- end drpoleft menu -->
+            </div>
+            <!-- end col -->
+          </div>
+          <!-- end chat-container header -->
 
-</div><!-- end main col-8 -->
-</div><!-- end main row -->
-</div><!-- end main container -->
+          <!-- chat-container user chats -->
+          <div id="user-chat-container" class="row px-lg-5 px-0">
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+            <div class="row sentMessage">
+              <div class="col-auto rounded-left py-1">Hi!<small class="pl-2">01:23 PM</small><i class="fas fa-check pl-1"></i></div>
+            </div>
+            <div class="row sentMessage">
+              <div class="col-auto rounded-left py-1">This is some sample text<small class="pl-2">01:23 PM</small><i class="fas fa-check pl-1"></i></div>
+            </div>
+            <div class="row receivedMessage">
+              <div class="col-auto rounded-right py-1">And this is also some sample text<small class="pl-2">01:24 PM</small></div>
+            </div>
+            <div class="row sentMessage">
+              <div class="col-auto rounded-left py-1">Can you send some long sample text?<small class="pl-2">01:24 PM</small><i class="fas fa-check pl-1"></i></div>
+            </div>
+            <div class="row receivedMessage">
+              <div class="col-auto rounded-right py-1">Ya sure<small class="pl-2">01:25 PM</small></div>
+            </div>
+            <div class="row receivedMessage">
+              <div class="col-auto rounded-right py-1">So here is a sample message text, a long sample text which conatins multiple lines and is perfect for placeholder text.<small class="pl-2">01:26 PM</small></div>
+            </div>
+            <div class="row sentMessage">
+              <div class="col-auto rounded-left py-1">Random pic below<small class="pl-2">01:27 PM</small><i class="fas fa-check pl-1"></i></div>
+            </div>
+            <div class="row sentMessage">
+              <div class="col-auto rounded-left py-1 chat-image"><img src="https://loremflickr.com/200/200/?random" class="img-fluid" alt="random-img"><small class="pl-2">01:27 PM</small><i class="fas fa-check pl-1"></i></div>
+            </div>
+            <div class="row receivedMessage">
+              <div class="col-auto rounded-right py-1">Send a message by typing in the input field below.<small class="pl-2">01:28 PM</small></div>
+            </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script type="text/javascript" src="script/data.js"></script>
-<script type="text/javascript" src="script/script.js"></script>
-<script type="text/javascript" src="script/jquery.js"></script>
+          </div>
+          <!-- chat-container user chats -->
+
+          <!-- chat-container chat input -->
+          <div id="chatInput">
+            <div class="row align-items-center">
+              <div class="col-1 text-center">
+                <i class="far fa-smile"></i>
+              </div>
+              <div class="col-10">
+                <input type="text" name="chatMessage" placeholder="  Type a message">
+              </div>
+              <div class="col-1 text-center pl-0">
+                <i id="send-button" class="fas fa-microphone"></i>
+              </div>
+            </div>
+          </div>
+          <!-- chat-container chat input -->
+
+        </div>
+        <!-- end user-chat -->
+
+        <!-- user status -->
+        <div id="user-status" class="container-fluid">
+          
+          <div class="row align-items-center statusHeader">
+            <div class="col-1 d-lg-none"><i class="fas fa-arrow-left"></i></div>
+            <div class="col-1"><img id="userPicStatus" class="img-fluid rounded-circle"></div>
+            <div class="col-9 col-lg-10">
+              <div class="row reduced-line-height">
+                <div class="col-12"><span id="userNameStatus"></span></div>
+                <div class="col-12"><small id="statusDate"></small></div>
+              </div>
+            </div>
+            <div class="col-1">
+              <div class="dropleft">
+                <button id="userStatusMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-ellipsis-v"></i>
+               </button>
+                <div class="dropdown-menu" aria-labelledby="userStatusMenuButton">
+                  <a class="dropdown-item" href="#">Mute</a>
+                </div>
+              </div>
+            </div><!-- end col -->
+          </div><!-- end row -->
+
+          <div class="container-fluid p-0" style="height: 90vh;">
+            <div class="row align-items-center" style="height: 100%">
+              <div class="col-12 p-0 text-center">
+                <img id="userStatusPic" class="img-fluid">
+              </div>
+            </div>
+            <div class="row">
+              <div id="statusMessage" class="col-12">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- end user status -->
+
+      </div>
+      <!-- end main col-8 -->
+    </div>
+    <!-- end main row -->
+  </div>
+  <!-- end main container -->
+
+  <!-- Javascript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="script/data.js"></script>
+  <script type="text/javascript" src="script/script.js"></script>
+  <script type="text/javascript" src="script/jquery.js"></script>
 
 </body>
+
 </html>
